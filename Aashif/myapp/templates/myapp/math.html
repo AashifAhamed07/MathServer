@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Calculator</title>
+    <style>
+        body {
+            background-color: #E3F2FD;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .box {
+            background-color: #BBDEFB;
+            width: 400px;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        input {
+            margin: 8px;
+            padding: 10px;
+            width: 50%;
+        }
+        input[type="submit"] {
+            width: auto;
+            background-color: Grey;
+            color: white;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>BMI CALCULATOR</h2>
+        <h3>Name: Aashif ahamed S</h3>
+        <h3>Reg No: 25013503</h3>
+
+        <form method="post">
+            {% csrf_token %}
+            <label>Height (cm):</label><br>
+            <input type="number" name="height" required>
+            <br>
+            <label>Weight (kg):</label>
+            <br>
+            <input type="number" name="weight" required>
+            <br>
+            <input type="submit" value="CALCULATE BMI">
+        </form>
+        
+        <div class="result">
+            Your BMI: {{ bmi }}
+        </div>
+    </div>
+</body>
+</html>
